@@ -19,7 +19,7 @@ pip install pyside2
 run from source:
 python main.py
 
-### discussion here:
+### link to german forum about this tool:
 
 https://coinforum.de/topic/20273-seed-durch-w%C3%BCrfeln-berechnen-f%C3%BCr-ledger-electrum-usw-von-hand-mit-tools/
 
