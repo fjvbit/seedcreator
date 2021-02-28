@@ -665,7 +665,7 @@ class TMainWindow(QMainWindow):
         self.ui.labelWort1.setText(self.wortliste[index])
 
     def readWortList(self):
-        f = open('english.txt')
+        f = open('data/english.txt')
 
         # list = f.readlines()
         self.wortliste = f.read().splitlines()

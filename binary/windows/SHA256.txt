@@ -1,0 +1,8 @@
+f192aea98b7619dfff92fd801b94d1fbeabc199bc1939d508ec6b70640c1a65a
+
+certutil -hashfile main.exe SHA256
+
+powershell:
+
+Get-FileHash main.exe -Algorithm SHA256
+
