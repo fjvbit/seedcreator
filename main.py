@@ -632,29 +632,6 @@ class TMainWindow(QMainWindow):
             self.ui.labelWort24Index.setText('')
         return
 
-        self.w24Liste = self.__find_word24_all()
-        l = len(self.b)
-        b2 = self.b
-
-        print ("Laenge", l,b2)
-
-        if len(self.w24Liste) == 8:
-            try:
-                wuerfel24 = int(self.ui.lew24w1.text())
-                index = self.w24Liste[(wuerfel24-1) // 2]
-                word = self.wortliste[index]
-                self.ui.labelWort24.setText(word)
-                self.ui.labelWort24Index.setText(str(index))
-                self.seed += word
-            except:
-                self.seed = ''
-                self.ui.labelWort24.setText('')
-
-        else:
-            self.seed = ''
-
-        self.ui.textEditSeed.setText(self.seed)
-
 
     def buttonCalculate2(self):
         z1 = int(self.ui.lew1w1.text())
@@ -665,12 +642,9 @@ class TMainWindow(QMainWindow):
         self.ui.labelWort1.setText(self.wortliste[index])
 
     def readWortList(self):
-        f = open('data/english.txt')
-
-        # list = f.readlines()
-        self.wortliste = f.read().splitlines()
-
-        f.close()
+        with open('data/english.txt') as f:
+            # list = f.readlines()
+            self.wortliste = f.read().splitlines()
         print (self.wortliste)
 
 if __name__ == "__main__":
